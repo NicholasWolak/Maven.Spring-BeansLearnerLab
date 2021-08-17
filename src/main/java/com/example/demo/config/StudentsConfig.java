@@ -25,21 +25,26 @@ public class StudentsConfig {
         this.classroom = classroom;
     }
 
-    @Bean(name = "students")
-    public Students currentStudents() {
-        return classroom.getStudents();
-    }
+    @Configuration
+    public class StudentConfig {
 
-    @Bean
-    public Students previousStudents() {
-        return null;
-    }
 
-    public Classroom getClassroom() {
-        return classroom;
-    }
+        @Bean(name = "students")
+        public Students currentStudents() {
+            return new Students(
+                    new Student(1L, "Jen"),
+                    new Student(2L, "Jeremy"),
+                    new Student(3L, "Char")
+            );
+        }
 
-    public void setClassroom(Classroom classroom) {
-        this.classroom = classroom;
+        @Bean(name = "previous_students")
+        public Students previousStudents() {
+            return new Students(
+                    new Student(1L, "Chris"),
+                    new Student(2L, "Earl"),
+                    new Student(3L, "Jack")
+            );
+        }
     }
 }

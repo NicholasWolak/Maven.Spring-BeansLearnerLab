@@ -15,6 +15,10 @@ public abstract class People<E extends Person>implements Iterable<E>{
         this.personList = new ArrayList<>();
     }
 
+    public People() {
+
+    }
+
     public void add (E person) {
         personList.add(person);
     }

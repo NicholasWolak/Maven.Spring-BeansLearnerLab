@@ -8,6 +8,9 @@ public class Instructors extends People<Instructor>{
         super(personList);
     }
 
+    public Instructors(Instructor stewart, Instructor colin, Instructor tom) {
+    }
+
 
     @Override
     public Iterator<Instructor> iterator() {

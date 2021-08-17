@@ -2,7 +2,7 @@ package com.example.demo;
 
 public class Student extends Person implements Learner{
 
-    private double totalStudyTime = 0;
+    private double totalStudyTime;
 
     public Student(Long id, String name) {
         super(id, name);
@@ -11,5 +11,13 @@ public class Student extends Person implements Learner{
     @Override
     public void learn(double numberOfHours) {
         totalStudyTime += numberOfHours;
+    }
+
+    public double getTotalStudyTime() {
+        return totalStudyTime;
+    }
+
+    public void setTotalStudyTime(double totalStudyTime) {
+        this.totalStudyTime = totalStudyTime;
     }
 }
